@@ -1,0 +1,505 @@
+/* Main body of content style */
+
+main {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border: solid 1px black;
+    filter: drop-shadow(0 0 3px black);
+}
+/* Ribbon heading styles */
+main h2 {
+    position: relative;
+    text-align: center;
+    font-family: Baskerville;
+    padding: 2px 20px;
+    margin: 20px 0 30px -40px; /* Negative left margin makes it pop out */
+    background: #bababa;
+    color: rgb(0, 0, 0);
+    filter: drop-shadow(0 0 2px black);
+    font-size: 32px;
+    width: fit-content; /* Make ribbon only as wide as needed */
+    min-width: 200px; /* Minimum width for consistency */
+    border: solid 2px #000000;
+    border-radius: 5px;
+    transition: transform .2s ease;
+}
+
+/* Creates the ribbon end effect */
+main h2::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    border-top: 15px solid #606060; /* Darker shade header/footer color */
+    border-left: 20px solid transparent;
+    filter: brightness(70%);
+}
+
+main h2:hover {
+    transform: translate(10px);
+}
+
+/* Adjust margin for mobile screens */
+@media (max-width: 768px) {
+    main h2 {
+        margin-left: -20px;
+    }
+}
+
+main:last-of-type {
+    margin-bottom: 10px;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin-top: 160px;
+    line-height: 1.6;
+    color: #333333;
+    background-color: rgb(0, 90, 30);
+    padding: 10px;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(165, 165, 165);
+    /* Slight translucency */
+    z-index: 500;
+    transition: top 0.3s ease, background-color 0.3s ease;
+    margin: 10px;
+    border-radius: 15px;
+    border: solid 1px black;
+    filter: drop-shadow(0 0 3px black);
+}
+
+header h1 {
+    padding-right: 15px;
+    font-size: 2.5rem;
+    font-family: Baskerville;
+    font-weight: bold;
+}
+
+header h1 span {
+    color: rgb(32, 32, 32);
+}
+h2 {
+    text-align: center;
+    font-size: 32px;
+}
+
+header .title-container img {
+    height: 80px;
+    width: 70px;
+    border-radius: 32px;
+    border:solid 3px rgb(32, 32, 32);
+    filter: drop-shadow(0 0 1px black);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    transform: translateX(-35px);
+}
+
+header.hidden {
+    top: -300px;
+}
+
+header.visible {
+    background-color: rgb(165, 165, 165);
+}
+
+/* Logo and Title Styling */
+.logo-title {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-title h1 {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.spartan-logo {
+    width: 70px;
+    height: 80px;
+    color: #004403;
+    /* Adjust this to match your design */
+}
+
+/* Title configuration */
+
+.title-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+    background-color: #7d7d7d;
+    border: solid 2px black;
+    border-radius: 38px;
+    filter: drop-shadow(0 0 2px black);
+}
+
+.main-title {
+    font-size: 2.5rem;
+    white-space: nowrap;
+}
+
+.social-icons {
+    position: absolute;
+    top: 70px;
+    left: 430px;
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons svg {
+    fill: #7f7f7f;
+    border-radius: 14px;
+    border: solid 2px black;
+    background-color: black;
+    filter: drop-shadow(0 0 2px black);
+}
+
+@media (max-width: 560px) {
+    .title-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .social-icons {
+        opacity: 0;
+    }
+}
+
+/* Buttons for different section, hamburger menu layout */
+
+.ham-menu {
+    height: 40px;
+    width: 40px;
+    right: 20px;
+    top: 25px;
+    position: fixed;
+    cursor: pointer;
+    border-radius: 10px;
+    border: solid 2px black;
+    background-color: #7f7f7f;
+    padding: 0;
+    z-index: 999;
+    transition: opacity 0.4s ease, filter 0.4s ease;
+    filter: drop-shadow(0 0 3px black);
+}
+
+.ham-menu.active {
+    background: none;
+    border-style: none;
+    transform: translate(-3px, 3px);
+    transition: opacity 0.4s ease, filter 0.4s ease;
+    filter: none;
+}
+
+.ham-menu span {
+    z-index: 1000;
+    height: 5px;
+    width: 66%;
+    background-color: #000000;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(2) {
+    top: 50%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 75%;
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 40%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+    width: 75%;
+}
+
+
+/* off screen, closed and open hamburger menu */
+
+.off-screen-menu {
+    background-color: rgb(125, 125, 125);
+    height: 340px;
+    width: 250px;
+    /* Adjust as needed */
+    position: fixed;
+    top: 20px;
+    right: -180px;
+    /* Start off-screen */
+    transition: right 0.4s ease, opacity 0.4s ease;
+    z-index: 994;
+    /* Layer it above most content */
+    opacity: 0;
+    /* Hidden initially */
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #000000;
+    display: flex;
+    flex-direction: column;
+    /* Change to column to stack vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 3px black);
+}
+
+.off-screen-menu.active {
+    right: 20px;
+    opacity: 1;
+}
+
+.off-screen-menu nav {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    /* Stack nav items vertically */
+    position: center;
+    width: 100%;
+    /* Full width of parent */
+    /* Add some vertical padding */
+}
+
+.off-screen-menu nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Stack list items vertically */
+    align-items: center;
+    /* Add space between menu items */
+    /*position: center;*/
+}
+
+.off-screen-menu nav ul li {
+    margin: 0;
+    /* Remove horizontal margin */
+    width: 90%;
+    /* Full width for each item */
+    font-weight: bold;
+    text-align: center;
+    /*position: center;*/
+}
+
+.off-screen-menu nav ul li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #000000;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
+    /*text-align: center;*/
+}
+
+.off-screen-menu nav ul li a:hover {
+    background-color: rgba(85, 85, 85, 0.5);
+    /* Slightly transparent hover effect */
+}
+
+/* Fade in scroll effect */
+
+/* Initial state for fade-in elements */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Start slightly below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Active state when element is in view */
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+    /* Back to original position */
+}
+
+/* Section Styles */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.project-list {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* PDF Section Styling */
+.pdf-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pdf-preview {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.pdf-actions .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-actions .btn:hover {
+    background-color: #555;
+}
+
+/* Footer Styles */
+footer {
+    position: relative;
+    background-color: rgb(165, 165, 165);
+    transform: translateY(0px);
+    transition: tranform 0.4s ease;
+    border-radius: 15px;
+    border: solid 1px black;
+    filter: drop-shadow(0 0 3px black);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+footer section {
+    top: 0;
+    left: 0;
+    text-align: left;
+    line-height: 1.1; /* Add this to reduce vertical spacing */
+}
+
+footer h2 {
+    text-align: left;
+    font-size: 20px; /* Slightly reduced */
+    margin: 0;
+}
+
+footer h3 {
+    font-size: 12px; /* Slightly reduced */
+    margin: 0;
+    line-height: 1.2; /* Tighter line spacing for multi-line text */
+}
+
+footer p {
+    font-size: 10px;
+    margin: 2px 0; /* Reduced margin */
+}
+
+footer.visible {
+    bottom: 10px;
+    transition: bottom 0.4s ease;
+}
+
+footer.hidden {
+    transform: translateY(200px);
+    transition: bottom 0.4s ease;
+}
+
+footer .title-container svg {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 32px;
+    border:solid 3px rgb(32, 32, 32);
+    filter: drop-shadow(0 0 1px black);
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+
+.footer-links, .tech-stack, .footer-contact, .footer-mission {
+    padding: 0 1rem;
+}
+
+footer h4 {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+footer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    width:90%;
+}
