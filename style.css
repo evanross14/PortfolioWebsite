@@ -142,6 +142,8 @@ header.visible {
     display: flex;
     align-items: center;
     padding: 10px;
+    flex-shrink: 0;
+    margin-right: 1rem;
     gap: 20px;
     background-color: #7d7d7d;
     border: solid 2px black;
@@ -364,7 +366,6 @@ header.visible {
 
 /* Section Styles */
 .container {
-    max-width: 100%;
     margin: 0 auto;
     padding: 1rem 2rem;
 }
@@ -416,81 +417,95 @@ header.visible {
     background-color: #555;
 }
 
-/* Footer Styles */
+/* Footer Base Styles */
 footer {
     position: relative;
+    width: 100%;
     background-color: rgb(165, 165, 165);
-    transform: translateY(0px);
-    transition: tranform 0.4s ease;
     border-radius: 15px;
     border: solid 1px black;
     filter: drop-shadow(0 0 3px black);
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    color: #000000;
-    font-size: 18px;
-    font-weight: bold;
-    z-index: 100;
+    overflow: hidden; /* Keeps scrolling content inside footer */
 }
 
-footer section {
-    top: 0;
-    left: 0;
-    text-align: left;
-    line-height: 1.1; /* Add this to reduce vertical spacing */
+/* Scrolling Container - Holds all footer sections */
+.footer-scroll-container {
+    display: flex;
+    gap: 2rem; /* Space between footer sections */
+    padding: 1rem;
+    animation: scroll-left 20s linear infinite;
+    white-space: nowrap; /* Prevents text wrapping */
 }
 
-footer h2 {
-    text-align: left;
-    font-size: 20px; /* Slightly reduced */
-    margin: 0;
+/* Pause animation on hover */
+.footer-scroll-container:hover {
+    animation-play-state: paused;
 }
 
-footer h3 {
-    font-size: 12px; /* Slightly reduced */
-    margin: 0;
-    line-height: 1.2; /* Tighter line spacing for multi-line text */
+/* Individual Footer Section */
+.footer-section {
+    display: flex;
+    min-width: 300px; /* Minimum width of each section */
+    padding: 1rem;
+    background-color: rgb(140, 140, 140); /* Slightly darker than footer */
+    filter: drop-shadow(0 0 3px);
+    border-radius: 30px;
+    border: solid 1px black;
+    gap: 1rem; /* Space between logo and text */
 }
 
-footer p {
-    font-size: 10px;
-    margin: 2px 0; /* Reduced margin */
+/* Logo Container */
+.footer-section .logo-container {
+    flex-shrink: 0; /* Prevents logo from shrinking */
+    width: 80px; /* Fixed width for logo area */
 }
 
-footer.visible {
-    bottom: 10px;
-    transition: bottom 0.4s ease;
-}
-
-footer.hidden {
-    transform: translateY(200px);
-    transition: bottom 0.4s ease;
-}
-
-footer .title-container svg {
+/* Logo SVG Styling */
+.footer-section .logo-container svg {
     padding: 10px;
     background-color: #ffffff;
     border-radius: 32px;
-    border:solid 3px rgb(32, 32, 32);
+    border: solid 3px rgb(32, 32, 32);
     filter: drop-shadow(0 0 1px black);
 }
 
-footer .container {
-    display: grid;
-    grid-template-columns: auto 1fr 1fr;
-    gap: 2rem;
-    padding: 1rem 2rem;
+/* Text Content Container */
+.footer-section .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
 }
 
-.footer-links, .tech-stack, .footer-contact, .footer-mission {
-    padding: 0 1rem;
+/* Text Styles */
+.footer-section h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: #000000;
 }
 
-footer h4 {
-    font-size: 16px;
-    margin: 0 0 8px 0;
+.footer-section h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0;
+    color: #000000;
+    line-height: 1.2;
 }
 
+/* Scrolling Animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Link Styles */
 footer a {
     color: #000000;
     text-decoration: none;
