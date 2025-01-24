@@ -1,5 +1,3 @@
-// Add interactivity (such as buttons) as needed
-
 /*
 Scrolling animation scripts
 */

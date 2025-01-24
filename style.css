@@ -114,6 +114,46 @@ header.visible {
     background-color: rgb(165, 165, 165);
 }
 
+/* Existing header styles remain the same, scaling for mobile devices*/
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    header .title-container img {
+        height: 60px;
+        width: 60px;
+        border-radius: 24px;
+    }
+
+    .logo-title {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .social-icons {
+        transform: translateY(-10px);
+        transform: scale(90%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header .title-container img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .social-icons{
+        transform: scale(85%);
+    }
+}
+
+
 /* Logo and Title Styling */
 .logo-title {
     margin-left: 20px;
@@ -518,5 +558,7 @@ footer a:hover {
 }
 
 hr {
+    color:rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
     width:90%;
 }
