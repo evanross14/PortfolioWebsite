@@ -78,14 +78,16 @@ header {
 
 header h1 {
     padding-right: 15px;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-family: Baskerville;
     font-weight: bold;
+    text-align: center;
 }
 
 header h1 span {
     color: rgb(32, 32, 32);
 }
+
 h2 {
     text-align: center;
     font-size: 32px;
@@ -133,7 +135,6 @@ header.visible {
     }
 
     .social-icons {
-        transform: translateY(-10px);
         transform: scale(90%);
     }
 }
@@ -197,10 +198,9 @@ header.visible {
 }
 
 .social-icons {
-    position: absolute;
-    top: 70px;
-    left: 430px;
+    position: relative;
     display: flex;
+    transform: translateY(-30px);
     gap: 12px;
 }
 
