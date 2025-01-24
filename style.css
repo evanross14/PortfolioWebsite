@@ -40,11 +40,13 @@ main h2:hover {
 }
 
 /* Adjust margin for mobile screens */
+/*
 @media (max-width: 768px) {
     main h2 {
         margin-left: -20px;
     }
 }
+*/
 
 main:last-of-type {
     margin-bottom: 10px;
@@ -67,7 +69,6 @@ header {
     left: 0;
     right: 0;
     background-color: rgb(165, 165, 165);
-    /* Slight translucency */
     z-index: 500;
     transition: top 0.3s ease, background-color 0.3s ease;
     margin: 10px;
@@ -134,9 +135,6 @@ header.visible {
         text-align: center;
     }
 
-    .social-icons {
-        transform: scale(90%);
-    }
 }
 
 @media screen and (max-width: 480px) {
@@ -149,9 +147,10 @@ header.visible {
         width: 50px;
     }
 
-    .social-icons{
-        transform: scale(85%);
+    .social-icons {
+        transform: translateY(-10px);
     }
+
 }
 
 
@@ -200,8 +199,7 @@ header.visible {
 .social-icons {
     position: relative;
     display: flex;
-    transform: translateY(-30px);
-    gap: 12px;
+    gap: 10px;
 }
 
 .social-icons a {
