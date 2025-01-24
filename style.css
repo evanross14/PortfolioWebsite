@@ -222,21 +222,6 @@ header.visible {
     filter: drop-shadow(0 0 2px black);
 }
 
-@media (max-width: 560px) {
-    .title-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .main-title {
-        font-size: 2rem;
-    }
-
-    .social-icons {
-        opacity: 0;
-    }
-}
-
 /* Buttons for different section, hamburger menu layout */
 
 .ham-menu {
