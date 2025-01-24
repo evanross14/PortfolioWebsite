@@ -147,10 +147,6 @@ header.visible {
         width: 50px;
     }
 
-    .social-icons {
-        transform: translateY(-10px);
-    }
-
 }
 
 
@@ -200,6 +196,8 @@ header.visible {
     position: relative;
     display: flex;
     gap: 10px;
+    transform: scale(85%);
+    transform: translateY(30%);
 }
 
 .social-icons a {
