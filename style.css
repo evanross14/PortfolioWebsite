@@ -197,7 +197,7 @@ header.visible {
     display: flex;
     gap: 10px;
     transform: scale(50%);
-    transform: translateY(30%);
+    transform: translate(-10px, 30%);
 }
 
 .social-icons a {
@@ -224,7 +224,7 @@ header.visible {
     height: 40px;
     width: 40px;
     right: 20px;
-    top: 25px;
+    top: 20px;
     position: fixed;
     cursor: pointer;
     border-radius: 10px;
