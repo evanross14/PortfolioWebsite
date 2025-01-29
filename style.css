@@ -97,7 +97,7 @@ h2 {
 header .title-container img {
     height: 80px;
     width: 80px;
-    border-radius: 32px;
+    border-radius: 30%;
     border:solid 3px rgb(32, 32, 32);
     filter: drop-shadow(0 0 1px black);
 }
@@ -124,10 +124,13 @@ header.visible {
         font-size: 1.5rem; /* Smaller font size for mobile */
     }
 
+    header .title-container {
+        border-radius: 34px;
+    }
+
     header .title-container img {
         height: 60px;
         width: 60px;
-        border-radius: 24px;
     }
 
     .logo-title {
@@ -140,6 +143,10 @@ header.visible {
 @media screen and (max-width: 480px) {
     header h1 {
         font-size: 1.2rem;
+    }
+
+    header .title-container {
+        border-radius: 30px;
     }
 
     header .title-container img {
@@ -234,6 +241,11 @@ header.visible {
     z-index: 999;
     transition: opacity 0.4s ease, filter 0.4s ease;
     filter: drop-shadow(0 0 3px black);
+    transition: transform 0.2s ease
+}
+
+.ham-menu:hover {
+    transform: scale(1.1);
 }
 
 .ham-menu.active {
@@ -524,7 +536,7 @@ footer {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-124%);
     }
 }
 
