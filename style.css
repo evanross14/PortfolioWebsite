@@ -38,16 +38,44 @@ main h2::before {
 main h2:hover {
     transform: translate(10px);
 }
+/* Existing header styles remain the same, scaling for mobile devices*/
 
-/* Adjust margin for mobile screens */
-/*
-@media (max-width: 768px) {
-    main h2 {
-        margin-left: -20px;
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
     }
-}
-*/
 
+    header .title-container {
+        border-radius: 34px;
+    }
+
+    header .title-container img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .logo-title {
+        margin-left: 0;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header .title-container {
+        border-radius: 30px;
+    }
+
+    header .title-container img {
+        height: 50px;
+        width: 50px;
+    }
+
+}
 main:last-of-type {
     margin-bottom: 10px;
 }
