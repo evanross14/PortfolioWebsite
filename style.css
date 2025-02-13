@@ -6,19 +6,23 @@ main {
     border: solid 1px black;
     filter: drop-shadow(0 0 3px black);
 }
+
 /* Ribbon heading styles */
 main h2 {
     position: relative;
     text-align: center;
     font-family: Baskerville;
     padding: 2px 20px;
-    margin: 20px 0 30px -40px; /* Negative left margin makes it pop out */
+    margin: 20px 0 30px -40px;
+    /* Negative left margin makes it pop out */
     background: #bababa;
     color: rgb(0, 0, 0);
     filter: drop-shadow(0 0 2px black);
     font-size: 32px;
-    width: fit-content; /* Make ribbon only as wide as needed */
-    min-width: 200px; /* Minimum width for consistency */
+    width: fit-content;
+    /* Make ribbon only as wide as needed */
+    min-width: 200px;
+    /* Minimum width for consistency */
     border: solid 2px #000000;
     border-radius: 5px;
     transition: transform .2s ease;
@@ -30,7 +34,8 @@ main h2::before {
     position: absolute;
     top: 100%;
     left: -1px;
-    border-top: 15px solid #606060; /* Darker shade header/footer color */
+    border-top: 15px solid #606060;
+    /* Darker shade header/footer color */
     border-left: 20px solid transparent;
     filter: brightness(70%);
 }
@@ -38,44 +43,9 @@ main h2::before {
 main h2:hover {
     transform: translate(10px);
 }
+
 /* Existing header styles remain the same, scaling for mobile devices*/
 
-@media screen and (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem; /* Smaller font size for mobile */
-    }
-
-    header .title-container {
-        border-radius: 34px;
-    }
-
-    header .title-container img {
-        height: 60px;
-        width: 60px;
-    }
-
-    .logo-title {
-        margin-left: 0;
-        text-align: center;
-    }
-
-}
-
-@media screen and (max-width: 480px) {
-    header h1 {
-        font-size: 1.2rem;
-    }
-
-    header .title-container {
-        border-radius: 30px;
-    }
-
-    header .title-container img {
-        height: 50px;
-        width: 50px;
-    }
-
-}
 main:last-of-type {
     margin-bottom: 10px;
 }
@@ -126,7 +96,7 @@ header .title-container img {
     height: 80px;
     width: 80px;
     border-radius: 30%;
-    border:solid 3px rgb(32, 32, 32);
+    border: solid 3px rgb(32, 32, 32);
     filter: drop-shadow(0 0 1px black);
 }
 
@@ -148,8 +118,35 @@ header.visible {
 /* Existing header styles remain the same, scaling for mobile devices*/
 
 @media screen and (max-width: 768px) {
+
+    body {
+        margin-top: 140px;
+    }
+
+    main h2 {
+        font-size: 26px;
+        min-width: 150px;
+    }
+
+    /* Creates the ribbon end effect */
+    main h2::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: -1px;
+        border-top: 15px solid #606060;
+        /* Darker shade header/footer color */
+        border-left: 20px solid transparent;
+        filter: brightness(70%);
+    }
+
+    p {
+        font-size: 10.5px;
+    }
+
     header h1 {
-        font-size: 1.5rem; /* Smaller font size for mobile */
+        font-size: 1.5rem;
+        /* Smaller font size for mobile */
     }
 
     header .title-container {
@@ -169,6 +166,11 @@ header.visible {
 }
 
 @media screen and (max-width: 480px) {
+
+    body {
+        margin-top: 130px;
+    }
+
     header h1 {
         font-size: 1.2rem;
     }
@@ -486,16 +488,19 @@ footer {
     border-radius: 15px;
     border: solid 1px black;
     filter: drop-shadow(0 0 3px black);
-    overflow: hidden; /* Keeps scrolling content inside footer */
+    overflow: hidden;
+    /* Keeps scrolling content inside footer */
 }
 
 /* Scrolling Container - Holds all footer sections */
 .footer-scroll-container {
     display: flex;
-    gap: 2rem; /* Space between footer sections */
+    gap: 2rem;
+    /* Space between footer sections */
     padding: 1rem;
     animation: scrollFooter 20s linear infinite;
-    white-space: nowrap; /* Prevents text wrapping */
+    white-space: nowrap;
+    /* Prevents text wrapping */
     position: relative;
 }
 
@@ -507,19 +512,24 @@ footer {
 /* Individual Footer Section */
 .footer-section {
     display: flex;
-    min-width: 300px; /* Minimum width of each section */
+    min-width: 300px;
+    /* Minimum width of each section */
     padding: 1rem;
-    background-color: rgb(140, 140, 140); /* Slightly darker than footer */
+    background-color: rgb(140, 140, 140);
+    /* Slightly darker than footer */
     filter: drop-shadow(0 0 3px);
     border-radius: 30px;
     border: solid 1px black;
-    gap: 1rem; /* Space between logo and text */
+    gap: 1rem;
+    /* Space between logo and text */
 }
 
 /* Logo Container */
 .footer-section .logo-container {
-    flex-shrink: 0; /* Prevents logo from shrinking */
-    width: 80px; /* Fixed width for logo area */
+    flex-shrink: 0;
+    /* Prevents logo from shrinking */
+    width: 80px;
+    /* Fixed width for logo area */
 }
 
 /* Logo SVG Styling */
@@ -563,6 +573,7 @@ footer {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-124%);
     }
@@ -579,7 +590,7 @@ footer a:hover {
 }
 
 hr {
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     border-color: rgb(0, 0, 0);
-    width:90%;
+    width: 90%;
 }
